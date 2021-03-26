@@ -5,7 +5,7 @@ import VideoCards from "./VideoCards"
 const Channels = () => {
     return (
         <div>
-            <h3>Hi </h3>
+            <h3>Hi hello</h3>
             <VideoCards/>
         </div>
     )
