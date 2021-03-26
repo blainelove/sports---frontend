@@ -1,23 +1,26 @@
 import React, {useState, useEffect} from "react"
-import Channels from "./Channels"
+import ChannelContainer from "./ChannelContainer"
 import User from "./User"
 
 
 
 const App = () => {
+    const[ channelArr, setChannels ] = useState([])
+    console.log(channelArr)
    
     useEffect(() => {
         fetch("http://localhost:3000/channels")
         .then ((r) => r.json())
-        .then (list => {
-            console.log(list)
-        })
+        .then (channelList => {
+            setChannels(channelList)
 
+            })
     },[])
     return (
         <div>
+            <h3>hello</h3>
             <User />
-            <Channels />
+            <ChannelContainer channels={channelArr}/>
         </div>
     )
 }
