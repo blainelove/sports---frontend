@@ -5,19 +5,20 @@ import User from "./User"
 
 
 const App = () => {
+    const [channels, setChannels] = useState([])
    
     useEffect(() => {
         fetch("http://localhost:3000/channels")
-        .then ((r) = r.json())
+        .then ((r) => r.json())
         .then (list => {
-            console.log(list)
+            setChannels(list)
         })
 
     },[])
     return (
         <div>
             <User />
-            <Channels />
+            <Channels channels={channels}/>
         </div>
     )
 }

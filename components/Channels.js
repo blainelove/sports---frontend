@@ -2,10 +2,18 @@ import React, {useState, useEffect} from "react"
 import VideoCards from "./VideoCards"
 
 
-const Channels = () => {
+const Channels = ({channels}) => {
+    const displayChannel = channels.map((channel) => {
+        return (
+            // key={channel.id}
+            channel={channel}
+
+        )
+    })
     return (
         <div>
-            <h3>Hi </h3>
+            <h3>{channel.name}</h3>
+            
             <VideoCards/>
         </div>
     )
