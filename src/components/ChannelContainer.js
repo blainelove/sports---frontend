@@ -5,8 +5,11 @@ import Channels from "./Channels"
 
 
 const ChannelContainer = ({channels}) => {
+   
+  
+
     const displayChannels =channels.map((channel)=> {
-       return <Channels channel={channel}/>
+       return <Channels key = {channel.id} channel={channel}/>
     })
     return (
         <div>
