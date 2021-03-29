@@ -3,7 +3,7 @@ import React, {useState, useEffect} from "react"
 
 
 const VideoCards = ({video}) => {
-    const [videos, setVideos] = useState(false)
+    
    
     
    

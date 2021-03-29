@@ -8,7 +8,7 @@ import User from "./User"
 const App = () => {
     const[ channelArr, setChannels ] = useState([])
     const[ videosArr, setVideosArr ] = useState([])
-    console.log(channelArr)
+    console.log({channelArr,videosArr})
    
     useEffect(() => {
         fetch("http://localhost:3000/channels")
@@ -26,12 +26,23 @@ const App = () => {
 
             })
     },[])
+    
+    function addVideo(video,channelId){
+        console.log(video, channelId)
+        let channel = [...channelArr].filter(channel => channel.id === channelId)
+        console.log(channel)
+        let allChannels = [...channelArr].filter(channel => channel.id !== channelId)
+        console.log(allChannels)
+        // channel.videos = [...channel.videos, video]
+        // allChannels = [...allChannels, channel]
+        // setChannels(allChannels) 
+    }
     return (
         <div>
             <h3>hello</h3>
             <User />
-            <ChannelContainer channels={channelArr}/>
-            <AddVideos setVideosArr = {setVideosArr}/>
+            <ChannelContainer channels={channelArr} videos ={videosArr}/>
+            <AddVideos addVideo={addVideo}/>
         </div>
     )
 }

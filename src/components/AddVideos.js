@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-const AddVideos = ({setVideosArr}) => {
+const AddVideos = ({addVideo}) => {
     const [newVideo, setNewVideo] = useState({
         title:"",
         pic:"",
@@ -23,7 +23,7 @@ const AddVideos = ({setVideosArr}) => {
                 body: JSON.stringify(newVideo)
             })
             .then((r)=> r.json())
-            .then((newItem) => setVideosArr((videosArr)=>[...videosArr, newItem]))
+            .then((newItem) => addVideo(newItem, 1))
 
         }
     return (
@@ -49,20 +49,18 @@ const AddVideos = ({setVideosArr}) => {
         value={newVideo.url}
         onChange={handleChange}
       ></input>
-      <option
-        type="?"
-        name="?"
-        placeholder="user"
-        value={newVideo.user_id}
+      <select
+      value={newVideo.channel_id}
         onChange={handleChange}
-      ></option>
-       <option
-        type="?"
-        name="?"
-        placeholder="channel_id"
-        value={newVideo.channel_id}
-        onChange={handleChange}
-      ></option>
+        name="channel_id">
+      <option value='1'> portttt1 </option>
+      <option value='2'> porttttt2 </option>
+      <option value='3'> porttttt3 </option>
+      </select>
+      <select value={newVideo.user_id} onChange={handleChange} name='user_id'>
+      <option value='1'> Blaine </option>
+      <option value='2'> Jaskomal </option>
+      </select>
       <button type="submit">Submit</button>
     </form>
     )

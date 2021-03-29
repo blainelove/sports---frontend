@@ -4,7 +4,7 @@ import Channels from "./Channels"
 
 
 
-const ChannelContainer = ({channels}) => {
+const ChannelContainer = ({channels, videos}) => {
    
   
 
