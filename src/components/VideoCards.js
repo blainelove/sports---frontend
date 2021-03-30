@@ -30,7 +30,7 @@ const VideoCards = ({video, deleteVideo, handleUpdateTitle}) => {
             ) : (
             <button onClick={handleTitleToogle}>Display Form</button>
             )}
-            {(displayForm) &&  <UpdateVid handleUpdateTitle/>}    
+            {(displayForm) &&  <UpdateVid handleUpdateTitle= {handleUpdateTitle} video = {video}/>}    
         </div>
     )
 }
