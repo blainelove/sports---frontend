@@ -58,7 +58,7 @@ const App = () => {
             <h3>hello</h3>
             <User />
             <ChannelContainer channels={channelArr} videos ={videosArr} setVideosArr={setVideosArr} deleteVideo={deleteVideo}/>
-            <AddVideos addVideo={addVideo}/>
+            <AddVideos video ={videosArr} addVideo={addVideo}/>
         </div>
     )
 }
