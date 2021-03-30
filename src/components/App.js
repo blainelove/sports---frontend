@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react"
 import ChannelContainer from "./ChannelContainer"
 import AddVideos from "./AddVideos"
 import User from "./User"
+import UpdateVid from "./UpdateVid"
 
 
 
@@ -53,11 +54,23 @@ const App = () => {
         setChannels(allChannels) 
     }
 
+    function handleUpdateTitle(updatedVideo) {
+        const videoId = updatedVideo.id
+        const channelId = updatedVideo.channel_id 
+        let channel = [...channelArr].filter(chan => chan.id === channelId)[0]
+        console.log(channel.videos)
+        let allChannels = [...channelArr].filter(chan => chan.id !== channelId)
+        channel.videos=channel.videos.filter(video => video.id !== videoId)
+        channel.videos = [...channel.videos, updatedVideo]
+        allChannels = [...allChannels, channel]
+        setChannels(allChannels) 
+      }
+
     return (
         <div>
             <h3>hello</h3>
             <User />
-            <ChannelContainer channels={channelArr} videos ={videosArr} setVideosArr={setVideosArr} deleteVideo={deleteVideo}/>
+            <ChannelContainer channels={channelArr} videos ={videosArr} setVideosArr={setVideosArr} deleteVideo={deleteVideo} handleUpdateTitle={handleUpdateTitle}/>
             <AddVideos video ={videosArr} addVideo={addVideo}/>
         </div>
     )

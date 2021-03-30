@@ -4,12 +4,12 @@ import Channels from "./Channels"
 
 
 
-const ChannelContainer = ({channels, videos, setVideosArr, deleteVideo}) => {
+const ChannelContainer = ({channels, videos, setVideosArr, deleteVideo, handleUpdateTitle}) => {
 
     
 
     const displayChannels =channels.map((channel)=> {
-       return <Channels key = {channel.id} channel={channel} deleteVideo={deleteVideo}/>
+       return <Channels key = {channel.id} channel={channel} deleteVideo={deleteVideo} handleUpdateTitle={handleUpdateTitle}/>
     })
     return (
         <div>

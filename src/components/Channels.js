@@ -2,11 +2,11 @@ import React, {useState, useEffect} from "react"
 import VideoCards from "./VideoCards"
 
 
-const Channels = ({channel, deleteVideo}) => {
+const Channels = ({channel, deleteVideo, handleUpdateTitle}) => {
    const[video, setVideos] = useState([])
    const videos = channel.videos.map((video)=> {
        
-       return <VideoCards key = {video.id} video= {video} deleteVideo={deleteVideo} />
+       return <VideoCards key = {video.id} video= {video} deleteVideo={deleteVideo} handleUpdateTitle={handleUpdateTitle}/>
    })
     
     

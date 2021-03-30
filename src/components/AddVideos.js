@@ -27,20 +27,21 @@ const AddVideos = ({addVideo, video}) => {
 
         }
 
-        function handleUpdate(e) {
-          e.preventDefault()
-          const title = e.target.title.value
-          const pic = e.target.pic.value
-          const url = e.target.url.value
-          fetch(`http://localhost:3000/videos/${video.id}`, {
-            method: "PATCH",
-            headers: {"content-type": "application/json"},
-            body: JSON.stringify({title: title, pic: pic, url: url })
-          })
-          .then((r)=> r.json())
-          .then((updatedVideo)=> update
-          (updatedVideo))
-        }
+        // function handleUpdate(e) {
+        //   e.preventDefault()
+        //   const title = e.target.title.value
+        //   const pic = e.target.pic.value
+        //   const url = e.target.url.value
+        //   fetch(`http://localhost:3000/videos/${video.id}`, {
+        //     method: "PATCH",
+        //     headers: {"content-type": "application/json"},
+        //     body: JSON.stringify({title: title, pic: pic, url: url })
+        //   })
+        //   .then((r)=> r.json())
+        //   .then((updatedVideo)=> update
+        //   (updatedVideo))
+        // }
+        
     return (
     <form onSubmit={handleSubmit}>
       <input
