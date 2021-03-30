@@ -27,21 +27,37 @@ const App = () => {
             })
     },[])
     
-    function addVideo(video,channelId){
+    function addVideo(video){
+        const channelId = video.channel_id
         console.log(video, channelId)
-        let channel = [...channelArr].filter(channel => channel.id === channelId)
-        console.log(channel)
+        let channel = [...channelArr].filter(channel => channel.id === channelId)[0]
+        console.log(channel.videos)
         let allChannels = [...channelArr].filter(channel => channel.id !== channelId)
         console.log(allChannels)
-        // channel.videos = [...channel.videos, video]
-        // allChannels = [...allChannels, channel]
-        // setChannels(allChannels) 
+        channel.videos = [...channel.videos, video]
+        allChannels = [...allChannels, channel]//.sort()
+        setChannels(allChannels) 
     }
+
+    function deleteVideo(video) {
+        console.log(video)
+        const videoId = video.id
+        const channelId = video.channel_id 
+        let channel = [...channelArr].filter(chan => chan.id === channelId)[0]
+        console.log(channel.videos)
+        let allChannels = [...channelArr].filter(chan => chan.id !== channelId)
+        console.log(allChannels)
+        channel.videos=channel.videos.filter(video => video.id !== videoId)
+        console.log(channel)
+        allChannels = [...allChannels, channel]//.sort()
+        setChannels(allChannels) 
+    }
+
     return (
         <div>
             <h3>hello</h3>
             <User />
-            <ChannelContainer channels={channelArr} videos ={videosArr}/>
+            <ChannelContainer channels={channelArr} videos ={videosArr} setVideosArr={setVideosArr} deleteVideo={deleteVideo}/>
             <AddVideos addVideo={addVideo}/>
         </div>
     )

@@ -5,8 +5,8 @@ const AddVideos = ({addVideo}) => {
         title:"",
         pic:"",
         url:"",
-        user_id:"",
-        channel_id:""
+        user_id:1,
+        channel_id:1
     })
         function handleChange(e){
             const key = e.target.name
@@ -23,7 +23,7 @@ const AddVideos = ({addVideo}) => {
                 body: JSON.stringify(newVideo)
             })
             .then((r)=> r.json())
-            .then((newItem) => addVideo(newItem, 1))
+            .then((newItem) => addVideo(newItem))
 
         }
     return (
