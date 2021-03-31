@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react"
 import ChannelContainer from "./ChannelContainer"
 import AddVideos from "./AddVideos"
 import User from "./User"
-import '../App.css';
+import index from '../index.css'
 
 
 const App = () => {
@@ -67,11 +67,16 @@ const App = () => {
         allChannels = allChannels.sort((a, b) => (a.channel > b.channel) ? 1 : -1)
         setChannels(allChannels) 
       }
-
+      const mystyle = {
+        color: "white",
+        backgroundColor: "DodgerBlue",
+        padding: "10px",
+        fontFamily: "Arial"
+      };
 
     return (
         <div>
-            <h1>World of Weird Sports</h1>
+            <h1 style={mystyle}>World of Weird Sports</h1>
             <User />
             <ChannelContainer channels={channelArr} videos ={videosArr} setVideosArr={setVideosArr} deleteVideo={deleteVideo} handleUpdateTitle={handleUpdateTitle}/>
             <AddVideos video ={videosArr} addVideo={addVideo}/>

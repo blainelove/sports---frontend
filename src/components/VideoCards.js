@@ -23,9 +23,21 @@ const VideoCards = ({video, deleteVideo, handleUpdateTitle}) => {
     setDisplayVideo(!displayVideo)
 }
 
+    const cardBorder = {
+    backgroundColor: '#E9E9E9',
+    textAlign: 'center',
+    borderRadius: '25px',
+    border: '1px solid #A9A9A9',
+    marginLeft: 0,
+    marginBottom: '1rem',
+    width: '85%',
+    backgroundColor: 'gray',
+    color: 'black',
+    }
+
 
     return (
-        <div>
+        <div style={cardBorder}>
             <h3>{video.title}</h3>
             {displayVideo ? (
                 <Video  video = {video}/>     
