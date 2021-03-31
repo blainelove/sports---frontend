@@ -54,9 +54,11 @@ const AddVideos = ({addVideo, video}) => {
       value={newVideo.channel_id}
         onChange={handleChange}
         name="channel_id">
-      <option value='1'> portttt1 </option>
-      <option value='2'> porttttt2 </option>
-      <option value='3'> porttttt3 </option>
+      <option value='1'> World Chess Boxin</option>
+      <option value='2'> Downhill Cheese-Chasing </option>
+      <option value='3'> Bo-Taoshi </option>
+      <option value='4'> Quidditch </option>
+      <option value='5'> Cycleball </option>
       </select>
       <select value={newVideo.user_id} onChange={handleChange} name='user_id'>
       <option value='1'> Blaine </option>

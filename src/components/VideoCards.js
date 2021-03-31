@@ -30,7 +30,9 @@ const VideoCards = ({video, deleteVideo, handleUpdateTitle}) => {
             {displayVideo ? (
                 <Video  video = {video}/>     
                 ):(
-                <img src={video.pic}></img>
+                <img src={video.pic} 
+                width={400}
+                height={400}></img>
             )}
             
             <button onClick={handleClick}>Delete</button>
