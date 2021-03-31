@@ -2,8 +2,7 @@ import React, {useState, useEffect} from "react"
 import ChannelContainer from "./ChannelContainer"
 import AddVideos from "./AddVideos"
 import User from "./User"
-import UpdateVid from "./UpdateVid"
-
+import '../App.css';
 
 
 const App = () => {

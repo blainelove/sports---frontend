@@ -27,8 +27,12 @@ const VideoCards = ({video, deleteVideo, handleUpdateTitle}) => {
     return (
         <div>
             <h3>{video.title}</h3>
-           
-            <img src={video.pic}/>
+            {displayVideo ? (
+                <Video  video = {video}/>     
+                ):(
+                <img src={video.pic}></img>
+            )}
+            
             <button onClick={handleClick}>Delete</button>
             {displayForm ? (
             <button onClick={handleTitleToogle}>Hide Form</button>
@@ -38,10 +42,11 @@ const VideoCards = ({video, deleteVideo, handleUpdateTitle}) => {
             {(displayForm) &&  <UpdateVid handleUpdateTitle= {handleUpdateTitle} video = {video}/>}
             {displayVideo ? (
             <button onClick={handleVideoToogle}>Hide Video</button>
+            
             ) : (
             <button onClick={handleVideoToogle}>Play Video</button>
             )}
-            {(displayVideo) &&  <Video  video = {video}/>}        
+            
         </div>
     )
 }
