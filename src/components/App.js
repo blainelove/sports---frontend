@@ -40,7 +40,6 @@ const App = () => {
     }
 
     function deleteVideo(video) {
-        
         const videoId = video.id
         const channelId = video.channel_id 
         let channel = [...channelArr].filter(chan => chan.id === channelId)[0]
@@ -51,22 +50,30 @@ const App = () => {
         
         allChannels = [...allChannels, channel]//.sort()
         setChannels(allChannels) 
-    }
+     }
+     
 
     function handleUpdateTitle(updatedVideo) {
-        const videoId = updatedVideo.id
-        const channelId = updatedVideo.channel_id 
-        let channel = [...channelArr].filter(chan => chan.id === channelId)[0]
-        console.log(channel.videos)
-        let allChannels = [...channelArr].filter(chan => chan.id !== channelId)
-        channel.videos=channel.videos.filter(video => video.id !== videoId)
-    
-        channel.videos = [...channel.videos, updatedVideo].sort((a, b) => a.id > b.id )
-        console.log(channel.videos)
-        allChannels = [...allChannels, channel]
-        allChannels = allChannels.sort((a, b) => (a.channel > b.channel) ? 1 : -1)
-        setChannels(allChannels) 
+        const allChannels = channelArr.map((channel)=>{
+            if (channel.id === updatedVideo.channel_id){
+                return{
+                    ...channel, videos: channel.videos.map((video) => {
+                        if (video.id === updatedVideo.id){
+                            return updatedVideo
+                        }
+                        else{
+                            return video
+                        }
+                    })
+                }
+            }
+            else{
+                return channel
+            }
+        })
+        setChannels(allChannels)
       }
+
       const mystyle = {
         color: "white",
         backgroundColor: "DodgerBlue",
