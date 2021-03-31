@@ -51,7 +51,7 @@ const App = () => {
         allChannels = [...allChannels, channel]//.sort()
         setChannels(allChannels) 
      }
-     
+
 
     function handleUpdateTitle(updatedVideo) {
         const allChannels = channelArr.map((channel)=>{
@@ -78,7 +78,8 @@ const App = () => {
         color: "white",
         backgroundColor: "DodgerBlue",
         padding: "10px",
-        fontFamily: "Arial"
+        fontFamily: "Arial",
+        textAlign: "center"
       };
 
     return (

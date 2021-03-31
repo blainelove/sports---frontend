@@ -30,14 +30,28 @@ const VideoCards = ({video, deleteVideo, handleUpdateTitle}) => {
     border: '1px solid #A9A9A9',
     marginLeft: 0,
     marginBottom: '1rem',
-    width: '85%',
+    width: '550px',
     backgroundColor: 'gray',
     color: 'black',
+    }
+
+    const button = {
+     marginTop: '1.5rem',
+     marginRight: '1.5rem',
+     display: 'inline',
+     textAlign: 'center',
+     fontSize: '12px',
+     borderRadius: '8px',
+     backgroundColor: 'antiquewhite',
+     color:'red',
+     fontWeight: '900',
+     padding: '7px 7px'
     }
 
 
     return (
         <div style={cardBorder}>
+            <div>
             <h3>{video.title}</h3>
             {displayVideo ? (
                 <Video  video = {video}/>     
@@ -46,19 +60,19 @@ const VideoCards = ({video, deleteVideo, handleUpdateTitle}) => {
                 width={400}
                 height={400}></img>
             )}
-            
-            <button onClick={handleClick}>Delete</button>
+            </div>
+            <button onClick={handleClick} style={button}>Delete</button>
             {displayForm ? (
-            <button onClick={handleTitleToogle}>Hide Form</button>
+            <button onClick={handleTitleToogle} style={button}>Hide Form</button>
             ) : (
-            <button onClick={handleTitleToogle}>Display Form</button>
+            <button onClick={handleTitleToogle} style={button}>Display Form</button>
             )}
             {(displayForm) &&  <UpdateVid handleUpdateTitle= {handleUpdateTitle} video = {video}/>}
             {displayVideo ? (
-            <button onClick={handleVideoToogle}>Hide Video</button>
+            <button onClick={handleVideoToogle} style={button}>Hide Video</button>
             
             ) : (
-            <button onClick={handleVideoToogle}>Play Video</button>
+            <button onClick={handleVideoToogle} style={button}>Play Video</button>
             )}
             
         </div>

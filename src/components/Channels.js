@@ -18,22 +18,17 @@ const Channels = ({channel, deleteVideo, handleUpdateTitle}) => {
     display: "flex",
     justifyContent: "flex-start",
     overflowX: "scroll",
-    paddingTop: '25px' 
-
+    paddingTop: '25px'
 }
+
     
     return (
         <div>
             <h2>{channel.name}</h2>
-            <div style={contentContainer}>
-           <br></br>
+            <div style={contentContainer}> 
+           <br></br> 
             <h3>{videos}</h3>
-            </div>
-           
-           
-            
-            
-           
+            </div>      
         </div>
          
     )
