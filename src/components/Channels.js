@@ -16,8 +16,8 @@ const Channels = ({channel, deleteVideo, handleUpdateTitle}) => {
     return (
         <div>
             <div>
-            <h1>{channel.name}</h1>
-            <h2>{channel.category}</h2>
+            <h2>{channel.name}</h2>
+           
             <h3>{videos}</h3>
             </div>
            
