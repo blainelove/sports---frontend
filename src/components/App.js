@@ -85,9 +85,9 @@ const App = () => {
     return (
         <div>
             <h1 style={mystyle}>World of Weird Sports</h1>
+            <AddVideos video ={videosArr} addVideo={addVideo}/>
             <User />
             <ChannelContainer channels={channelArr} videos ={videosArr} setVideosArr={setVideosArr} deleteVideo={deleteVideo} handleUpdateTitle={handleUpdateTitle}/>
-            <AddVideos video ={videosArr} addVideo={addVideo}/>
         </div>
     )
 }

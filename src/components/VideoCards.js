@@ -24,15 +24,15 @@ const VideoCards = ({video, deleteVideo, handleUpdateTitle}) => {
 }
 
     const cardBorder = {
-    backgroundColor: '#E9E9E9',
-    textAlign: 'center',
-    borderRadius: '25px',
-    border: '1px solid #A9A9A9',
-    marginLeft: 0,
-    marginBottom: '1rem',
-    width: '550px',
-    backgroundColor: 'gray',
-    color: 'black',
+     backgroundColor: '#E9E9E9',
+     textAlign: 'center',
+     borderRadius: '25px',
+     border: '1px solid #A9A9A9',
+     marginLeft: 0,
+     marginBottom: '1rem',
+     width: '550px',
+     backgroundColor: 'gray',
+     color: 'black',
     }
 
     const button = {
