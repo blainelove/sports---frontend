@@ -14,11 +14,11 @@ const UpdateVid = ({handleUpdateTitle, video}) => {
       fetch(`http://localhost:3000/videos/${video.id}`, {
         method: "PATCH",
         headers: {"content-type": "application/json"},
-        body: JSON.stringify({newTitle})
+        body: JSON.stringify({title: newTitle})
       })
       .then((r)=> r.json())
       .then((update) => {
-        console.log(update)
+        handleUpdateTitle(update)
       })
       
     }
